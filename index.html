@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniele Pol Consulting — Analisi di conti correnti, mutui e finanziamenti</title>
+<meta name="description" content="Verifica tecnica di conti correnti, mutui, prestiti e leasing: anatocismo, commissione di massimo scoperto, usura, TAEG. Analisi da remoto in tutta Italia.">
+<meta property="og:title" content="Daniele Pol Consulting — Analisi bancarie">
+<meta property="og:description" content="Scopri se la tua banca ti ha addebitato interessi e commissioni non dovuti. Prima valutazione gratuita, tutto da remoto.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314324a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23d9b26f' text-anchor='middle'%3EDP%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#14212b; --ink-soft:#4a5965; --navy:#14324a; --navy-2:#1d4766;
+  --gold:#b98a3e; --gold-soft:#f3e7d1; --bg:#fbfaf7; --card:#ffffff;
+  --line:#e4dfd4; --ok:#2f6b4f;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --r:14px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--navy-2)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;color:var(--navy);margin:0 0 .5em}
+h1{font-size:clamp(2rem,4.6vw,3.25rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.8em;display:block}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:60ch}
+section{padding:88px 0}
+.alt{background:#f3f0e8}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gold);color:#fff}
+.btn-primary:hover{background:#a3762f}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--serif);font-size:1.25rem;color:var(--navy);text-decoration:none;font-weight:600}
+.brand span{color:var(--gold)}
+.nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;align-items:center}
+.nav ul a{text-decoration:none;color:var(--ink);font-size:.95rem}
+.nav ul a:hover{color:var(--gold)}
+.nav .btn{padding:9px 18px;color:#fff}
+.menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy);cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;gap:18px;border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+}
+
+/* hero */
+.hero{overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:96px 0 104px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border-radius:50%;border:1px solid rgba(217,178,111,.25);box-shadow:0 0 0 60px rgba(217,178,111,.05),0 0 0 120px rgba(217,178,111,.03)}
+.hero h1{color:#fff;max-width:20ch}
+.hero .lead{color:#d5dee6}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-points{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;font-size:.95rem;color:#d5dee6;padding:0;list-style:none}
+.hero-points li::before{content:"✓";color:var(--gold);font-weight:700;margin-right:8px}
+
+/* cards */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.card .ico{width:46px;height:46px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;margin-bottom:16px}
+.card .ico svg{width:24px;height:24px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card ul{padding-left:1.1em;margin:0;color:var(--ink-soft)}
+.card li{margin-bottom:.35em}
+.card p{color:var(--ink-soft)}
+.section-head{max-width:720px;margin-bottom:48px}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.step{position:relative;padding:28px 26px 26px;background:var(--card);border-radius:var(--r);border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--serif);font-size:2.4rem;color:var(--gold);line-height:1;display:block;margin-bottom:12px}
+.step p{color:var(--ink-soft);margin:0}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;background:#e5efe9;color:var(--ok);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+
+/* glossary */
+.gloss{display:grid;gap:0;border-top:1px solid var(--line)}
+.gloss div{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.gloss dt{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:1.1rem}
+.gloss dd{margin:0;color:var(--ink-soft)}
+@media (max-width:700px){.gloss div{grid-template-columns:1fr;gap:6px}}
+
+/* example */
+.example{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media (max-width:860px){.example{grid-template-columns:1fr}}
+.ex-table{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ex-table table{width:100%;border-collapse:collapse;font-size:.97rem}
+.ex-table th,.ex-table td{padding:14px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.ex-table th{background:var(--navy);color:#fff;font-weight:600}
+.ex-table td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ex-table tr.hl td{background:var(--gold-soft);font-weight:700;color:var(--navy)}
+.ex-note{font-size:.82rem;color:var(--ink-soft);padding:12px 20px;margin:0}
+
+/* about */
+.about{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.portrait{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);font-family:var(--serif);font-size:4rem}
+.facts{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.facts li{padding-left:28px;position:relative;color:var(--ink-soft)}
+.facts li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:2px;background:var(--gold)}
+
+/* docs checklist */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px 14px 48px;position:relative}
+.check li::before{content:"";position:absolute;left:18px;top:18px;width:16px;height:16px;border:2px solid var(--gold);border-radius:4px}
+.check small{display:block;color:var(--ink-soft)}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 24px;margin-bottom:12px}
+summary{cursor:pointer;padding:20px 0;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;color:var(--gold);line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--ink-soft);padding-bottom:8px}
+
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}
+.contact .lead{color:#d5dee6}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+form{background:#fff;color:var(--ink);border-radius:var(--r);padding:32px}
+label{display:block;font-size:.88rem;font-weight:600;margin-bottom:6px;color:var(--navy)}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cfd6dc;border-radius:8px;font:inherit;font-size:1rem;background:#fff;margin-bottom:18px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+textarea{min-height:120px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;font-weight:400;color:var(--ink-soft)}
+.consent input{width:auto;margin:4px 0 0}
+.hidden{display:none}
+.contact-info p{color:#d5dee6}
+.contact-info a{color:var(--gold)}
+.warn{background:rgba(255,255,255,.07);border-left:3px solid var(--gold);padding:14px 18px;border-radius:6px;font-size:.92rem;color:#d5dee6}
+
+footer{background:#0e2232;color:#9fb0bd;font-size:.88rem;padding:40px 0}
+footer a{color:#cfd9e1}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.disclaimer{margin-top:20px;font-size:.8rem;color:#7d909e;max-width:900px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <nav class="wrap nav" aria-label="Navigazione principale">
+    <a href="#" class="brand">Daniele Pol <span>Consulting</span></a>
+    <button class="menu-btn" aria-label="Apri menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',document.getElementById('menu').classList.toggle('open'))">☰</button>
+    <ul id="menu">
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#metodo">Come lavoro</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contatti" class="btn btn-primary">Prima valutazione</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Analisi tecnico-contabili dei rapporti bancari</span>
+    <h1>La tua banca ti ha addebitato più di quanto doveva?</h1>
+    <p class="lead">Verifico conti correnti, mutui, prestiti e leasing per individuare anatocismo, commissioni di massimo scoperto illegittime, tassi usurari e TAEG non corrispondenti al contratto. Ottieni un quadro chiaro, con numeri, prima di decidere se agire.</p>
+    <div class="cta">
+      <a href="#contatti" class="btn btn-primary">Richiedi una prima valutazione gratuita</a>
+      <a href="#servizi" class="btn btn-ghost">Cosa verifico</a>
+    </div>
+    <ul class="hero-points">
+      <li>Tutto da remoto, in tutta Italia</li>
+      <li>Per privati, imprese e studi legali</li>
+      <li>Calcoli documentati e verificabili</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+<section id="servizi">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Servizi</span>
+      <h2>Cosa analizzo</h2>
+      <p class="lead">Ogni rapporto bancario ha criticità diverse. Questi sono gli ambiti in cui intervengo più spesso.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+        <h3>Conti correnti e affidamenti</h3>
+        <ul>
+          <li>Capitalizzazione trimestrale degli interessi (anatocismo)</li>
+          <li>Commissione di massimo scoperto e commissioni sostitutive</li>
+          <li>Tassi, valute e spese non pattuiti</li>
+          <li>Verifica del TEG trimestrale rispetto al tasso soglia</li>
+          <li>Ricalcolo del saldo e stima delle somme recuperabili</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Mutui</h3>
+        <ul>
+          <li>Ricalcolo del TAEG/ISC con tutti i costi (istruttoria, perizia, polizze, preammortamento)</li>
+          <li>Confronto con il TAEG dichiarato in contratto</li>
+          <li>Verifica di usura dei tassi corrispettivi e di mora</li>
+          <li>Controllo del piano di ammortamento</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></div>
+        <h3>Prestiti personali, finanziamenti e revolving</h3>
+        <ul>
+          <li>Calcolo del TEG con polizze assicurative e oneri accessori</li>
+          <li>Verifica del superamento del tasso soglia</li>
+          <li>Correttezza del TAEG indicato (art. 125-bis TUB)</li>
+          <li>Ricostruzione del dare/avere in caso di decreto ingiuntivo</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+        <h3>Leasing</h3>
+        <ul>
+          <li>Calcolo del tasso effettivo del contratto</li>
+          <li>Verifica di usura e della clausola di mora</li>
+          <li>Analisi della pretesa creditoria in caso di risoluzione</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14"/><path d="M5 7l-3 7a3 3 0 006 0L5 7zM19 7l-3 7a3 3 0 006 0l-3-7z"/></svg></div>
+        <h3>Supporto tecnico agli avvocati</h3>
+        <ul>
+          <li>Analisi preliminari per valutare la fondatezza della causa</li>
+          <li>Relazioni tecniche di parte da allegare agli atti</li>
+          <li>Osservazioni alla CTU e risposte ai consulenti della banca</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Recupero della documentazione</h3>
+        <p>Se non hai i documenti, ti aiuto a preparare la richiesta alla banca: per legge (art. 119 TUB) deve consegnarti copia di quelli degli ultimi dieci anni entro 90 giorni.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARIO -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">In parole semplici</span>
+      <h2>Le anomalie più frequenti</h2>
+    </div>
+    <dl class="gloss">
+      <div><dt>Anatocismo</dt><dd>Interessi calcolati su altri interessi. Sui conti correnti la capitalizzazione trimestrale degli interessi passivi è stata dichiarata illegittima per i contratti anteriori al luglio 2000, ed è contestabile anche dopo se non pattuita correttamente. In pochi anni può pesare per migliaia di euro.</dd></div>
+      <div><dt>Commissione di massimo scoperto</dt><dd>Commissione calcolata sul picco di utilizzo del fido. Spesso è stata applicata senza indicare in contratto un criterio di calcolo chiaro. Dopo il 2009 è stata sostituita da altre commissioni, che vanno anch'esse verificate.</dd></div>
+      <div><dt>Usura</dt><dd>Il costo complessivo del credito (interessi, commissioni, spese, polizze collegate) non può superare il tasso soglia fissato ogni trimestre in base alla legge 108/1996. Se lo supera, la legge prevede conseguenze rilevanti sugli interessi dovuti.</dd></div>
+      <div><dt>Interessi di mora</dt><dd>Anche il tasso previsto in caso di ritardo nei pagamenti va confrontato con la soglia. Se la supera, gli interessi di mora non sono dovuti (Cass. Sez. Unite n. 19597/2020).</dd></div>
+      <div><dt>TAEG / ISC non corretto</dt><dd>Il TAEG deve includere tutti i costi del finanziamento. Se quello reale non corrisponde a quello indicato in contratto, la differenza può essere contestata, con effetti diversi a seconda del tipo di contratto e della normativa applicabile.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- METODO -->
+<section id="metodo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Come lavoro</span>
+      <h2>Dai documenti a una risposta concreta</h2>
+      <p class="lead">Un percorso a fasi: decidi passo dopo passo se andare avanti, sapendo sempre cosa aspettarti.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="tag">Gratuito</span><h3>Primo contatto</h3><p>Mi descrivi il rapporto (conto, mutuo, prestito, leasing) e la tua situazione. Ti dico subito quali documenti servono e se ha senso procedere.</p></div>
+      <div class="step"><h3>Invio dei documenti</h3><p>Contratti, estratti conto, scalari, piani di ammortamento: tutto in formato digitale, anche fotografati. Nessun bisogno di spostarti.</p></div>
+      <div class="step"><h3>Analisi preliminare</h3><p>Ricostruisco i rapporti con fogli di calcolo dedicati e ricevi una relazione sintetica con le anomalie riscontrate e una stima delle somme contestabili.</p></div>
+      <div class="step"><h3>Perizia e supporto in causa</h3><p>Se decidi di procedere, preparo la relazione tecnica completa e affianco il tuo avvocato, anche come consulente di parte durante la CTU.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESEMPIO -->
+<section class="alt">
+  <div class="wrap example">
+    <div>
+      <span class="eyebrow">Cosa ricevi</span>
+      <h2>Un quadro chiaro, con numeri e ipotesi distinte</h2>
+      <p class="lead">Nell'analisi di un conto corrente quantifico separatamente le somme contestabili in base alle diverse ragioni di illegittimità. Così tu e il tuo legale potete valutare costi, benefici e rischi della causa.</p>
+      <p>Per ogni rapporto ricevi i prospetti di calcolo, le fonti normative utilizzate e i tassi soglia di riferimento per ogni trimestre.</p>
+    </div>
+    <div class="ex-table">
+      <table>
+        <thead><tr><th>Conto corrente di una PMI — 10 anni</th><th style="text-align:right">Importo</th></tr></thead>
+        <tbody>
+          <tr><td>Interessi, CMS e spese addebitati</td><td class="n">€ 100.000</td></tr>
+          <tr><td><strong>Ipotesi 1</strong> — capitalizzazione e CMS illegittime</td><td class="n">€ 30.000</td></tr>
+          <tr><td><strong>Ipotesi 2</strong> — anche tassi non validamente pattuiti</td><td class="n">€ 65.000</td></tr>
+          <tr class="hl"><td>Verifica di usura trimestrale</td><td class="n">inclusa</td></tr>
+        </tbody>
+      </table>
+      <p class="ex-note">Esempio puramente illustrativo, con cifre di fantasia. Il risultato di ogni analisi dipende dai documenti e dalle condizioni del singolo rapporto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section id="chi-sono">
+  <div class="wrap about">
+    <div class="portrait" aria-hidden="true">DP</div>
+    <div>
+      <span class="eyebrow">Chi sono</span>
+      <h2>Dott. Daniele Pol</h2>
+      <p class="lead">Sono abilitato all'esercizio della professione di Dottore Commercialista. Per due anni ho lavorato in uno studio professionale specializzato in contenzioso bancario, dove mi sono occupato dell'analisi tecnica dei rapporti tra clienti e istituti di credito.</p>
+      <p>In quegli anni ho analizzato decine di conti correnti di privati e imprese, mutui ipotecari e chirografari, prestiti personali, carte revolving e contratti di leasing con i principali gruppi bancari e finanziari italiani. Ho anche collaborato alla redazione di consulenze tecniche di parte e di osservazioni alle CTU in procedimenti civili.</p>
+      <ul class="facts">
+        <li>Ricalcolo di TAEG, ISC e TEG secondo la formula ministeriale e le istruzioni della Banca d'Italia</li>
+        <li>Ricostruzione dei saldi di conto corrente con e senza capitalizzazione e CMS</li>
+        <li>Verifica trimestrale dei tassi soglia di usura</li>
+        <li>Supporto tecnico agli avvocati in fase stragiudiziale e in giudizio</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTI -->
+<section class="alt">
+  <div class="wrap grid g2" style="align-items:start">
+    <div>
+      <span class="eyebrow">Per iniziare</span>
+      <h2>Quali documenti servono</h2>
+      <p class="lead">Non preoccuparti se non hai tutto: si può partire anche da una parte dei documenti. Il resto si può chiedere alla banca.</p>
+    </div>
+    <ul class="check">
+      <li><strong>Contratto</strong><small>Conto corrente, mutuo, prestito o leasing, con il documento di sintesi</small></li>
+      <li><strong>Estratti conto e scalari</strong><small>Per i conti correnti, idealmente degli ultimi 10 anni o dall'apertura</small></li>
+      <li><strong>Piano di ammortamento</strong><small>Per mutui, prestiti e leasing</small></li>
+      <li><strong>Atti ricevuti</strong><small>Decreti ingiuntivi, precetti, diffide o lettere della banca, se presenti</small></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="section-head">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>FAQ</h2>
+    </div>
+    <details><summary>Il mio conto è chiuso. Posso ancora fare qualcosa?</summary><p>In molti casi sì. Per i conti correnti, il diritto alla restituzione si prescrive in dieci anni, che in genere decorrono dalla chiusura del conto per le somme versate su un conto affidato (Cass. Sez. Unite n. 24418/2010). Conviene comunque verificare presto.</p></details>
+    <details><summary>Serve un avvocato?</summary><p>Per l'analisi no: puoi rivolgerti a me direttamente. Per una diffida o una causa contro la banca serve invece un legale. Posso lavorare con il tuo avvocato di fiducia oppure indicarti professionisti esperti della materia.</p></details>
+    <details><summary>Quanto costa?</summary><p>Il primo contatto e la valutazione di massima sono gratuiti. Per l'analisi preliminare e per la perizia ricevi un preventivo scritto e fisso prima di iniziare, in base al numero di rapporti e agli anni da analizzare.</p></details>
+    <details><summary>Posso fare tutto a distanza?</summary><p>Sì. I documenti si inviano in formato digitale e i chiarimenti si danno per telefono o videochiamata. Lavoro con clienti di tutta Italia.</p></details>
+    <details><summary>Lavori anche per imprese e studi legali?</summary><p>Sì. I rapporti delle imprese, con fidi, anticipi e più banche, sono spesso quelli in cui le somme in gioco sono più alte. Per gli studi legali svolgo analisi preliminari sulle pratiche e relazioni tecniche di parte.</p></details>
+    <details><summary>L'analisi garantisce un rimborso?</summary><p>No. L'analisi quantifica le anomalie e le somme contestabili sulla base dei documenti e degli orientamenti giurisprudenziali aggiornati. L'esito di un'eventuale controversia dipende da molti fattori, ed è proprio per questo che è utile valutarli prima.</p></details>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Contatti</span>
+      <h2>Richiedi una prima valutazione</h2>
+      <p class="lead">Descrivimi brevemente il tuo caso: ti rispondo entro due giorni lavorativi con le prime indicazioni e l'elenco dei documenti necessari.</p>
+      <p>Email: <a href="mailto:info@danielepolconsulting.it">info@danielepolconsulting.it</a></p>
+      <p class="warn">Non allegare documenti bancari in questo modulo: dopo il primo contatto ti indicherò come inviarli in modo sicuro.</p>
+    </div>
+    <form name="contatto" method="POST" action="/grazie.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contatto">
+      <p class="hidden"><label>Non compilare: <input name="bot-field"></label></p>
+      <div class="row2">
+        <div><label for="nome">Nome e cognome</label><input id="nome" name="nome" required autocomplete="name"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div><label for="tel">Telefono <span style="font-weight:400">(facoltativo)</span></label><input id="tel" name="telefono" type="tel" autocomplete="tel"></div>
+        <div><label for="chi">Sei</label>
+          <select id="chi" name="profilo"><option>Privato</option><option>Impresa</option><option>Avvocato / studio legale</option><option>Altro</option></select></div>
+      </div>
+      <label for="tipo">Tipo di rapporto</label>
+      <select id="tipo" name="rapporto">
+        <option>Conto corrente / affidamento</option><option>Mutuo</option><option>Prestito personale / finanziamento</option><option>Carta revolving</option><option>Leasing</option><option>Più rapporti / non so</option>
+      </select>
+      <label for="msg">Descrivi brevemente la situazione</label>
+      <textarea id="msg" name="messaggio" required placeholder="Es. conto corrente aziendale con fido aperto nel 2012, contratto disponibile, estratti conto dal 2015…"></textarea>
+      <label class="consent"><input type="checkbox" name="privacy" required> <span>Ho letto l'<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</span></label>
+      <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%">Invia richiesta</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><strong style="color:#fff">Daniele Pol Consulting</strong><br>Dott. Daniele Pol — Analisi tecnico-contabili dei rapporti bancari</div>
+      <div><a href="mailto:info@danielepolconsulting.it">info@danielepolconsulting.it</a> · <a href="privacy.html">Privacy</a></div>
+    </div>
+    <p class="disclaimer">Le informazioni di questo sito hanno carattere generale e non costituiscono consulenza legale. Le analisi sono di natura tecnico-contabile; l'eventuale tutela in sede stragiudiziale o giudiziale richiede l'assistenza di un avvocato. Gli esempi numerici sono illustrativi e non rappresentano casi reali.</p>
+  </div>
+</footer>
+
+</body>
+</html>
