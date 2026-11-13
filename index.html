@@ -387,9 +387,12 @@ footer a{color:#cfd9e1}
       <p>Email: <a href="mailto:info@danielepolconsulting.it">info@danielepolconsulting.it</a></p>
       <p class="warn">Non allegare documenti bancari in questo modulo: dopo il primo contatto ti indicherò come inviarli in modo sicuro.</p>
     </div>
-    <form name="contatto" method="POST" action="/grazie.html" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contatto">
-      <p class="hidden"><label>Non compilare: <input name="bot-field"></label></p>
+    <form name="contatto" method="POST" action="https://formsubmit.co/dadapol5@gmail.com">
+      <input type="hidden" name="_subject" value="Nuova richiesta dal sito danielepolconsulting.it">
+      <input type="hidden" name="_next" value="https://danielepolconsulting.it/grazie.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <p class="hidden"><label>Non compilare: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
       <div class="row2">
         <div><label for="nome">Nome e cognome</label><input id="nome" name="nome" required autocomplete="name"></div>
         <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
